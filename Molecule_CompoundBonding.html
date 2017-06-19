@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="styles/style.css" type="text/css" media="screen" />
+
+		<script type="text/javascript" src="scripts/redips-drag-min.js"></script>
+		<script type="text/javascript" src="scripts/compound-bonding-global.js"></script>
+		<script type="text/javascript" src="scripts/compound-bonding-section1.js"></script>
+		<script type="text/javascript" src="scripts/compound-bonding-section2.js"></script>
+		<script type="text/javascript" src="scripts/compound-bonding-section3.js"></script>
+		<script type="text/javascript" src="scripts/compound-bonding-section4.js"></script>
+		<script type="text/javascript" src="scripts/compound-bonding-section5.js"></script>
+		<script type="text/javascript" src="scripts/compound-bonding-general.js"></script>
+		<title>Molecule Construction</title>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MPQXTXK');</script>
+		<script>
+		  dataLayer = [];
+		  dataLayer.push({
+	    'event': 'launch', 'goedle': {'app_version': 'v2'}});
+		</script>
+
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPQXTXK"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<div id="drag">
+			<table id="table1" border="2" BORDERCOLOR="a01919">
+				<colgroup>
+					<col width='360'/>
+					<col width='360'/>
+				</colgroup>
+				<tr>
+					<td colspan='2' height='30' style='background-color:#a01919;color:white'><b>GoLab Organic Molecule Builder</b></td>
+				</tr>
+				<tr>
+					<td style='vertical-align:top' colspan='1'><br><b>Introduction</b><br><br>Using the GoLab Molecule Builder you explore the properties and nature of 20 different molecules or compounds. This resource is spread across 4 linked sections:<br>
+						<ul>
+							<li>Select a molecule and associate it with a homologous series</li>
+							<li>Associate the homologoue series with a functional group</li>
+							<li>Chose a structure map for your molecule</li>
+							<li>Build the molecule from various elements</li>
+						</ul>
+					</td>
+					<td colspan='1'><img id='intGif1' src='images/gifs/Propanone.gif' width='390' onclick='randChangeGIF(1)'></td>
+				</tr>
+				<tr height='1'>
+					<td colspan='2' style='background-color:#a01919'></td>
+				</tr>
+				<tr>
+					<td colspan='1'><img id='intGif2' src='images/gifs/benzene.gif' width='390' onclick='randChangeGIF(2)'></td>
+					<td style='vertical-align:top' colspan='1'>
+					<br><b>Instructions</b><br><br>
+					Once you have successfully completed the final section a full description of the molecule will be displayed, together with a 3D animation of the molecule. You will then be able to return to the first section and select another molecule.<br><br>
+					Full help and instructions are shown at the start of each section. So please read these carefully before you make your choices.<br><br>
+					<button onclick='stageOne(0);'>Start Molecule Builder</button>
+					</td>
+				</tr>
+			</table>
+			<table id="table2" border="2" BORDERCOLOR="a01919" style='width: 720px;'>
+			</table>
+			<div id="messagespace"></div>
+			<div id="dropspace"></div>
+			
+		</div>
+		<br><br>	
+	</body>
+</html>
