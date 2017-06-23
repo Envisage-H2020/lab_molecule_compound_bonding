@@ -22,15 +22,14 @@ function checkHomoFunctiongroupLink(ind){
 			//alert(correctLink);
 			if(correctLink === ind){
 				// We have made the correct selection
-
 				invokeButtons = 0;
 				showNextSectionButton = 1;
 				if(ind === 1){
-					dataLayer.push({"event": "select.functional_group", "event_id": correctHSPluralName, "event_value": true});
+					//dataLayer.push({"event": "select.HSPluralName", "event_id": correctHSPluralName, , "event_value": true });
 
 					var userMesage = "Correct. <b>"+correctHSPluralName+"</b> do not have an associated functional group.";
 				}else{
-					dataLayer.push({"event": "select.functional_group", "event_id": funcGroupName, , "event_value": true });
+					//dataLayer.push({"event": "select.functional_group", "event_id": funcGroupName, , "event_value": true });
 
 					var userMesage = "Correct. <b>"+funcGroupName+"</b> is the functional group of <b>"+correctHSName+"</b>.";
 				}
@@ -42,12 +41,10 @@ function checkHomoFunctiongroupLink(ind){
 				document.getElementById('attempts').innerHTML = attemptsImgString;
 				if(homGroupLinkAtttemps > 0){
 					if(ind === 1){
-						dataLayer.push({"event": "select.functional_group", "event_id": correctHSPluralName, , "event_value": false });
-
+						dataLayer.push({"event": "select.functional_group", "event_id": correctHSPluralName, "event_value": false });
 						var userMesage = "That is not correct. <b>"+correctHSPluralName+"</b> have a functional group";
 					}else{
 						dataLayer.push({"event": "select.functional_group", "event_id": funcGroupName, "event_value": false });
-
 						var userMesage = "Unfortunately <b>"+funcGroupName+"</b> is not the functional group for <b>"+correctHSPluralName+"</b>";
 					}
 					document.getElementById('messagespace').innerHTML = userMesage;
@@ -56,19 +53,17 @@ function checkHomoFunctiongroupLink(ind){
 					showNextSectionButton = 1;
 					if(ind === 1){
 						dataLayer.push({"event": "select.functional_group", "event_id": correctHSPluralName, "event_value": false });
-
 						var userMesage = "That is not correct. <b>"+correctHSPluralName+"</b> are associated with the <b> "+correctFGName+" </b> functional group.";
 					}else{
 						if(correctLink === 1){
 							// Its no FG
-							var userMesage = "That is not correct. <b>"+correctHSPluralName+"</b> do not have an associated functional group.";
 							dataLayer.push({"event": "select.functional_group", "event_id": correctHSPluralName, "event_value": false });
-
+							var userMesage = "That is not correct. <b>"+correctHSPluralName+"</b> do not have an associated functional group.";
+							
 						}else{
 							// It is an FG and we say which one
-							var userMesage = "That is not correct. <b>"+correctHSPluralName+"</b> are  associated with the <b> "+correctFGName+" </b> functional group.";
 							dataLayer.push({"event": "select.functional_group", "event_id": correctHSPluralName, "event_value": false });
-
+							var userMesage = "That is not correct. <b>"+correctHSPluralName+"</b> are  associated with the <b> "+correctFGName+" </b> functional group.";
 						}
 					}
 					document.getElementById('messagespace').innerHTML = userMesage;
@@ -78,7 +73,7 @@ function checkHomoFunctiongroupLink(ind){
 			}
 			document.getElementById('messagespace').innerHTML = userMessageTable;
 			document.getElementById('usermessagedisplay').innerHTML = userMesage;
-			if(showNextSectionButton == 1){document.getElementById('nextsectionbutton').innerHTML = nextSection2; }
+			if(showNextSectionButton == 1){document.getElementById('nextsectionbutton').innerHTML = nextSection2;}
 		}
 	
 	}

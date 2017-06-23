@@ -15,15 +15,11 @@ redipsInit = function () {
 	rd.hover.colorTd = '#9BB3DA';
 	// this function (event handler) is called after element is dropped
 	rd.event.dropped = function () {
-		console.log(rd.event)
-		console.log(document.getElementById('usermessage3')
 		document.getElementById('usermessage3').innerHTML = "";
-		)
-
 		dataLayer.push({"event": "drop.mol_structure", "event_id": compoundName, "event_value": true});
 
 	};
-	
+
 	rd.event.clicked = function () {
 		var itemID = rd.obj.id;
 		// alert(itemID);
@@ -74,8 +70,6 @@ function createDropArea(){
 
 function resetBuildArea(){
 	if(areaBuilt === 1){
-		dataLayer.push({"event": "reset.mol_structure", "event_id": compoundName});
-
 		numTotal = 0;
 		createDropArea();
 		document.getElementById('dropspace').innerHTML = buildAreaText;
@@ -90,11 +84,8 @@ function checkResult(){
 	GetCellValues();
 	if(numIncorrect > 0){
 		var messageText = "You placed "+numCorrect+" items correctly, but there are "+numIncorrect+" items either not yet placed or placed incorrectly.";
-		dataLayer.push({"event": "check.mol_structure", "event_id": compoundName, "event_value": true});
 	}else{
 		//var messageText = "You have correctly placed all elements of the compund . a 3D animation of the compound<br>Select 'Another Compound' to go back to the start. <button onclick='startAgain()'>Another Compound</button>";
-		dataLayer.push({"event": "check.mol_structure", "event_id": compoundName, "event_value": true});
-
 		var messageText = ""
 		buildAreaText = resultTable[currentMolecule][0];
 		document.getElementById('dropspace').innerHTML = buildAreaText;
@@ -165,6 +156,7 @@ function updateMessageLine(updateText){
 }
 
 function startAgain(){
+	dataLayer.push({"event": "restart"});
 	numTotal = 0;
 	currentMolecule = 0;
 	comHomLinkAtttemps = 3;
@@ -175,6 +167,5 @@ function startAgain(){
 	document.getElementById('dropspace').innerHTML = "";
 	document.getElementById('messagespace').innerHTML = "";
 	stageOne(0);
-	dataLayer.push({"event": "restart"});
 
 }

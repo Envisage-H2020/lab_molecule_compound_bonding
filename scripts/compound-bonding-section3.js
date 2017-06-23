@@ -9,9 +9,8 @@ function buildSection3(){
 	
 	
 	document.getElementById('table2').innerHTML = table2Section3;
-	var compoundDisplayText = "<td colspan='12'>Molecule: <b>"+compoundName+"</b>, Homologous Series: <b>"+correctHSName+"</b>, Functional Group: <b>"+correctGroup+"</b></td>"
 	dataLayer.push({"event": "start", "event_id": "stage_3", "event_value": compoundName});
-
+	var compoundDisplayText = "<td colspan='12'>Molecule: <b>"+compoundName+"</b>, Homologous Series: <b>"+correctHSName+"</b>, Functional Group: <b>"+correctGroup+"</b></td>"
 	document.getElementById('moleculeselection').innerHTML = compoundDisplayText;
 	document.getElementById('dropspace').innerHTML = section3Table;
 	document.getElementById('messagespace').innerHTML = "";
@@ -32,12 +31,10 @@ function checkStructIMG(){
 	if(molStructureIMGCurrent == molStructureIMGCorrect){
 		userMesage = "Well done. You have selected the correct structure for "+compoundName+".";
 		dataLayer.push({"event": "select.mol_structure", "event_id": compoundName, "event_value": true });
-
 	}else{
 		userMesage = "Unfortunately you did not select the correct structure.<br>The correct structure for "+compoundName+" is shown below.";
 		molStructureIMG = "images/structures/s"+molImgGrp.substring(molStructureIMGCorrect-1,molStructureIMGCorrect)+".png";
 		dataLayer.push({"event": "select.mol_structure", "event_id": compoundName, "event_value": false });
-
 	}
 	var t3top = "<td colspan='9' id='usermessagedisplay'></td> <td border='0' colspan='3' id='nextsectionbutton'><button onclick='buildSection4()'>Next Section</button></td></tr></table>";
 	document.getElementById('table3toprow').innerHTML = t3top;
@@ -48,8 +45,3 @@ function checkStructIMG(){
 }
 
 
-
-
-
-
-Steffi, ich 

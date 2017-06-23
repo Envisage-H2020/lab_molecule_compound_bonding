@@ -1,6 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-MPQXTXK');</script>
+		<!-- End Google Tag Manager -->
+		<script>
+		  dataLayer = [];
+		  dataLayer.push({
+	    'event': 'launch', 'goedle': {'app_version': 'v4'}});
+		</script>
 		<link rel="stylesheet" href="styles/style.css" type="text/css" media="screen" />
 
 		<script type="text/javascript" src="scripts/redips-drag-min.js"></script>
@@ -12,19 +24,6 @@
 		<script type="text/javascript" src="scripts/compound-bonding-section5.js"></script>
 		<script type="text/javascript" src="scripts/compound-bonding-general.js"></script>
 		<title>Molecule Construction</title>
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-MPQXTXK');</script>
-		<script>
-		  dataLayer = [];
-		  dataLayer.push({
-	    'event': 'launch', 'goedle': {'app_version': 'v2'}});
-		</script>
-
-		<!-- End Google Tag Manager -->
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
@@ -60,7 +59,7 @@
 					<br><b>Instructions</b><br><br>
 					Once you have successfully completed the final section a full description of the molecule will be displayed, together with a 3D animation of the molecule. You will then be able to return to the first section and select another molecule.<br><br>
 					Full help and instructions are shown at the start of each section. So please read these carefully before you make your choices.<br><br>
-					<button onclick='stageOne(0);'>Start Molecule Builder</button>
+					<button onclick='stageOne(0);dataLayer.push({"event": "start", "event_id": "stage_2", "event_value": compoundName});'>Start Molecule Builder</button>
 					</td>
 				</tr>
 			</table>

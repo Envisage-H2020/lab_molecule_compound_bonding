@@ -5,8 +5,6 @@ function stageOne(ind){
 	document.getElementById('dropspace').innerHTML = section1Table;
 	document.getElementById('table2').innerHTML = table2Section1;	
 	document.getElementById('messagespace').innerHTML = userMessageTable;
-	dataLayer.push({"event": "start", "event_id": "stage_2", "event_value": compoundName});
-
 }
 
 function selectSeries(){
@@ -25,8 +23,7 @@ function checkNameSelection(ind){
 		if(currentMolecule === 0){
 			var userMesage = "Please select a molecule from the list";
 			document.getElementById('usermessagedisplay').innerHTML = userMesage;
-		    dataLayer.push({"event": "select.molecule", "event_id": "none"});
-
+			dataLayer.push({"event": "select.molecule", "event_id": "none"});
 		}else{
 			if(comHomLinkAtttemps > 0){
 				compoundName = compoundNames[currentMolecule - 1]
@@ -38,8 +35,6 @@ function checkNameSelection(ind){
 				if(ind === compHomLink){
 					invokeButtons = 0;
 					showNextSectionButton = 1;
-					dataLayer.push({"event": "select.compound", "event_id": compoundName, "event_value": true});
-
 					var userMesage = "Correct. <b>"+compoundName+"</b> belongs to the <b>"+homSeriesName+"</b> homologous series.";
 				}else{
 					comHomLinkAtttemps -= 1;
