@@ -16,7 +16,7 @@ redipsInit = function () {
 	// this function (event handler) is called after element is dropped
 	rd.event.dropped = function () {
 		document.getElementById('usermessage3').innerHTML = "";
-		window.dataLayerer.push({"event": "drop.mol_structure", "event_id": compoundName, "event_value": true});
+		window.dataLayer.push({"event": "drop.mol_structure", "event_id": compoundName});
 
 	};
 
@@ -69,6 +69,8 @@ function createDropArea(){
 }
 
 function resetBuildArea(){
+	window.dataLayer.push({"event": "reset.mol_structure"});
+
 	if(areaBuilt === 1){
 		numTotal = 0;
 		createDropArea();
@@ -82,6 +84,8 @@ function resetBuildArea(){
 function checkResult(){
 
 	GetCellValues();
+	window.dataLayer.push({"event": "check.mol_structure"});
+
 	if(numIncorrect > 0){
 		var messageText = "You placed "+numCorrect+" items correctly, but there are "+numIncorrect+" items either not yet placed or placed incorrectly.";
 	}else{
@@ -156,7 +160,7 @@ function updateMessageLine(updateText){
 }
 
 function startAgain(){
-	window.dataLayerer.push({"event": "restart"});
+	window.dataLayer.push({"event": "restart"});
 	numTotal = 0;
 	currentMolecule = 0;
 	comHomLinkAtttemps = 3;

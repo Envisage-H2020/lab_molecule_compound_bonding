@@ -13,7 +13,7 @@ function selectSeries(){
 	currentMolecule = atomToSelect;
 	compoundName = compoundNames[currentMolecule - 1];
 	var compoundDisplayText = "<td colspan='12'><b>Selected molecule: "+compoundName+"</b></td>"
-	window.dataLayerer.push({"event": "choose.molecule", "event_id": compoundName});
+	window.dataLayer.push({"event": "choose.molecule", "event_id": compoundName});
 	document.getElementById('moleculeselection').innerHTML = compoundDisplayText;
 	
 }
@@ -23,7 +23,7 @@ function checkNameSelection(ind){
 		if(currentMolecule === 0){
 			var userMesage = "Please select a molecule from the list";
 			document.getElementById('usermessagedisplay').innerHTML = userMesage;
-			window.dataLayerer.push({"event": "select.molecule", "event_id": "none"});
+			window.dataLayer.push({"event": "select.molecule", "event_id": "none"});
 		}else{
 			if(comHomLinkAtttemps > 0){
 				compoundName = compoundNames[currentMolecule - 1]
@@ -42,7 +42,7 @@ function checkNameSelection(ind){
 						var userMesage = "Unfortunately the molecule <b>"+compoundName+"</b> does not belong to the <b>"+homSeriesName+"</b> homologous series.";
 						var attemptsImgString = '<img src="images/hs/HSAR'+comHomLinkAtttemps+'.png" width="100%">';
 						document.getElementById('attempts').innerHTML = attemptsImgString;
-						window.dataLayerer.push({"event": "select.compound", "event_id": compoundName, "event_value": false});
+						window.dataLayer.push({"event": "select.compound", "event_id": compoundName, "event_value": false});
 					}else{
 						invokeButtons = 0;
 						showNextSectionButton = 1;
@@ -51,7 +51,7 @@ function checkNameSelection(ind){
 						document.getElementById('attempts').innerHTML = attemptsImgString;
 						var hsKey = "HS"+compHomLink;
 						document.getElementById(hsKey).innerHTML = '<img src="images/hs/HS'+compHomLink+'x.png" width="100%">';
-						window.dataLayerer.push({"event": "select.compound", "event_id": compoundName, "event_value": false});
+						window.dataLayer.push({"event": "select.compound", "event_id": compoundName, "event_value": false});
 					}
 				}
 				document.getElementById('messagespace').innerHTML = userMessageTable;

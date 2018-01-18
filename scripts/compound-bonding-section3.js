@@ -9,7 +9,7 @@ function buildSection3(){
 	
 	
 	document.getElementById('table2').innerHTML = table2Section3;
-	window.dataLayerer.push({"event": "start", "event_id": "stage_3", "event_value": compoundName});
+	window.dataLayer.push({"event": "start", "event_id": "stage_3", "event_value": compoundName});
 	var compoundDisplayText = "<td colspan='12'>Molecule: <b>"+compoundName+"</b>, Homologous Series: <b>"+correctHSName+"</b>, Functional Group: <b>"+correctGroup+"</b></td>"
 	document.getElementById('moleculeselection').innerHTML = compoundDisplayText;
 	document.getElementById('dropspace').innerHTML = section3Table;
@@ -22,7 +22,7 @@ function swapStructIMG(ind){
 	molStructureIMGCurrent = ind;
 	molStructureIMG = "images/structures/s"+molImgGrp.substring(ind-1,ind)+".png";
 	document.getElementById('structIMG').src = molStructureIMG;	
-	window.dataLayerer.push({"event": "change.mol_structure", "event_id": compoundName, "event_value": molImgGrp.substring(ind-1,ind) });
+	window.dataLayer.push({"event": "change.mol_structure", "event_id": compoundName, "event_value": molImgGrp.substring(ind-1,ind) });
 
 }
 
@@ -30,11 +30,11 @@ function checkStructIMG(){
 	var userMesage = "";
 	if(molStructureIMGCurrent == molStructureIMGCorrect){
 		userMesage = "Well done. You have selected the correct structure for "+compoundName+".";
-		window.dataLayerer.push({"event": "select.mol_structure", "event_id": compoundName, "event_value": true });
+		window.dataLayer.push({"event": "select.mol_structure", "event_id": compoundName, "event_value": true });
 	}else{
 		userMesage = "Unfortunately you did not select the correct structure.<br>The correct structure for "+compoundName+" is shown below.";
 		molStructureIMG = "images/structures/s"+molImgGrp.substring(molStructureIMGCorrect-1,molStructureIMGCorrect)+".png";
-		window.dataLayerer.push({"event": "select.mol_structure", "event_id": compoundName, "event_value": false });
+		window.dataLayer.push({"event": "select.mol_structure", "event_id": compoundName, "event_value": false });
 	}
 	var t3top = "<td colspan='9' id='usermessagedisplay'></td> <td border='0' colspan='3' id='nextsectionbutton'><button onclick='buildSection4()'>Next Section</button></td></tr></table>";
 	document.getElementById('table3toprow').innerHTML = t3top;
