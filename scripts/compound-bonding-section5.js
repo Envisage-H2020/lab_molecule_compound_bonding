@@ -16,7 +16,7 @@ redipsInit = function () {
 	// this function (event handler) is called after element is dropped
 	rd.event.dropped = function () {
 		document.getElementById('usermessage3').innerHTML = "";
-		dataLayer.push({"event": "drop.mol_structure", "event_id": compoundName, "event_value": true});
+		window.dataLayerer.push({"event": "drop.mol_structure", "event_id": compoundName, "event_value": true});
 
 	};
 
@@ -156,7 +156,7 @@ function updateMessageLine(updateText){
 }
 
 function startAgain(){
-	dataLayer.push({"event": "restart"});
+	window.dataLayerer.push({"event": "restart"});
 	numTotal = 0;
 	currentMolecule = 0;
 	comHomLinkAtttemps = 3;
